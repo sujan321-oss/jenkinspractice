@@ -1,17 +1,20 @@
 pipeline {
     agent any
     stages {
-        
+
         stage('Build') {
-            steps {
-                sh "echo 'building the code'"  // Make sure the step is properly defined with curly braces
+            steps{
+                sh " echo 'building the code' "
             }
         }
 
-        stage("Testing") {
-            steps {
-                sh "echo 'testing the code'"  // Same here: define steps with curly braces
+
+        stage("testing") {
+            steps{
+                sh "echo 'testing a code'"
             }
         }
+
     }
+
 }
