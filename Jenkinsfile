@@ -1,19 +1,31 @@
 pipeline {
-    agent any
+    agent none
     stages {
 
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:alpine' 
+                    }
+                }
+
             steps{
-                sh " echo 'building the code' "
+                sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
+                sh "npm install -y"
+                sh "npm run dev"  
             }
         }
 
 
+
         stage("testing") {
+            agent any
             steps{
                 sh "echo 'testing a code'"
             }
         }
+
+
 
     }
 
