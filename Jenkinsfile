@@ -12,7 +12,7 @@ pipeline {
 
             steps{
                  sh 'apt-get update'
-                sh 'apt-get install node -y'
+                sh 'apt-get install nodejs -y'
                 sh 'apt-get install npm -y'
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
