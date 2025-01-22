@@ -5,10 +5,15 @@ pipeline {
         stage('Build') {
             agent {
                       docker {
-                             image 'node:alpine' 
+                             image 'ubuntu' 
                          }
                 }
-                
+
+            steps{
+                sh 'apt-get update'
+                sh 'apt-get install node -y'
+                sh 'apt-get install npm -y'
+            }
 
 
             steps{
