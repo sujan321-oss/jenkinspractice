@@ -7,6 +7,7 @@ pipeline {
                       docker {
                              image 'ubuntu' 
                              args "-u root"
+                             -v /var/run/docker.sock:/var/run/docker.sock
                          }
                 }
 
@@ -16,7 +17,11 @@ pipeline {
                 sh 'apt-get install npm -y'
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
+                sh "cd jenkinspipeline"
                 sh "npm run build"  
+
+
+
             }
 
         }
