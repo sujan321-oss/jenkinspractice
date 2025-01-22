@@ -6,6 +6,7 @@ pipeline {
             agent {
                       docker {
                              image 'ubuntu' 
+                             args "-u root"
                          }
                 }
 
