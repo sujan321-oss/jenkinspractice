@@ -9,12 +9,13 @@ pipeline {
                          }
                 }
 
+
             steps{
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
                 sh "npm run build"  
             }
-            
+
         }
 
 
