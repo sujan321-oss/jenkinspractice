@@ -4,16 +4,17 @@ pipeline {
 
         stage('Build') {
             agent {
-                docker {
-                    image 'node:alpine' 
-                    }
+                      docker {
+                             image 'node:alpine' 
+                         }
                 }
 
             steps{
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
-                sh "npm run dev"  
+                sh "npm run build"  
             }
+            
         }
 
 
