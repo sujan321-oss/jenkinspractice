@@ -3,6 +3,8 @@ pipeline {
     stages {
 
         stage('Build') {
+
+
             agent {
                       docker {
                              image 'ubuntu' 
@@ -11,16 +13,16 @@ pipeline {
                          }
                 }
 
+
+
             steps{
                  sh 'apt-get update'
                 sh 'apt-get install nodejs -y'
                 sh 'apt-get install npm -y'
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
-                sh "cd jenkinspipeline"
+                sh "ls  "
                 sh "npm run build"  
-
-
 
             }
 
