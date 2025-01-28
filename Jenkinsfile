@@ -1,9 +1,6 @@
 
 
-def testingimage(String a){
-    echo "hello this is testimage function"
-    echo a 
-}
+
 
 
 pipeline {
@@ -53,11 +50,15 @@ pipeline {
            steps{
 
             script{
+                def testingimage(String a){
+                        echo "hello this is testimage function"
+                        echo a 
+                    }
                 testingimage("value")
             }
 
             checkout scm
-            
+
              sh "docker build -t nodeapplication ."
            }
 
