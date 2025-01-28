@@ -48,6 +48,7 @@ pipeline {
            
             checkout scm
             sh "docker build -t khuma1/nodeapplication ."
+            sh "docker login -u khuma1 -p P00kharelk#"
             sh "docker push khuma1/nodeapplication"
           
 
