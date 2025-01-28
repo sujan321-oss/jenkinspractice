@@ -47,7 +47,7 @@ pipeline {
            steps{
            
             checkout scm
-            sh "docker build -t khuma1/nodeapplication ."
+            sh "docker build -t khuma1/nodeapplicationnn ."
            
             withCredentials([usernamePassword(credentialsId:'984855', usernameVariable:"Username" , password:"Password")])
 
