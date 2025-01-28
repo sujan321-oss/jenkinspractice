@@ -22,6 +22,9 @@ pipeline {
                 sh "git clone https://github.com/sujan321-oss/jenkinspractice.git"
                 sh "npm install -y"
                 sh "ls  "
+                sh "cd jenkinspractice"
+                sh "echo 'under the jenkinspractice'"
+                sh "ls"
  
                 sh "npm run build"  
 
