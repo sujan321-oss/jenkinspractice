@@ -1,15 +1,17 @@
 pipeline {
 
-                 agent{
+          
+    stages {
+
+        stage('Build') {
+
+                   agent{
                       docker {
                              image 'ubuntu' 
                              args "-u root -v /var/run/docker.sock:/var/run/docker.sock"
                             
                          }
             }
-    stages {
-
-        stage('Build') {
 
             steps{
                 sh 'rm -rf jenkinspractice || true'
@@ -30,9 +32,19 @@ pipeline {
         }
 
         stage("integrating_image"){
-           steps{
-             sh "docker build -t nodeapplication ."
 
+                agent{
+                    docker {
+                            image 'docker:latest' 
+                            args "-u root -v /var/run/docker.sock:/var/run/docker.sock"
+
+                    }
+                }
+
+
+           steps{
+            checkout scm
+             sh "docker build -t nodeapplication ."
            }
 
         }
