@@ -45,15 +45,7 @@ pipeline {
 
 
            steps{
-
-            script{
-               def testingimage = { String a ->
-                        echo "Hello, this is the testimage function"
-                        echo a
-                    }
-                    testimage ("value")
-            }
-
+           
             checkout scm
 
              sh "docker build -t nodeapplication ."
