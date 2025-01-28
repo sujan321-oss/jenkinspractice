@@ -1,8 +1,5 @@
 
 
-
-
-
 pipeline {
 
           
@@ -50,11 +47,11 @@ pipeline {
            steps{
 
             script{
-                def testingimage(String a){
-                        echo "hello this is testimage function"
-                        echo a 
+               def testingimage = { String a ->
+                        echo "Hello, this is the testimage function"
+                        echo a
                     }
-                testingimage("value")
+                    testimage ("value")
             }
 
             checkout scm
