@@ -22,7 +22,7 @@ pipeline {
                 checkout scm
                 sh "npm install -y"
                 sh "ls  "
-                sh "cd jenkinspractice"
+         
                 sh "echo 'under the jenkinspractice'"
                 sh "ls"
  
