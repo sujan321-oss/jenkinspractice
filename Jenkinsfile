@@ -49,11 +49,10 @@ pipeline {
             checkout scm
             sh "docker build -t khuma1/nodeapplicationnn ."
            
-            withCredentials([usernamePassword(credentialsId:'984855', usernameVariable:"Username" , password:"Password")])
-            {
-                            sh "docker push khuma1/nodeapplication"
-
-            }
+         withCredentials([usernamePassword(credentialsId: '984855', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+    sh "docker login -u $USERNAME -p $PASSWORD"
+    sh "docker push khuma1/nodeapplicationnn"
+}
 
 
 
