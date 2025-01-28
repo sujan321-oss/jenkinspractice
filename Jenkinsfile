@@ -47,8 +47,10 @@ pipeline {
            steps{
            
             checkout scm
+            sh "docker build -t khuma1/nodeapplication ."
+            sh "docker push khuma1/nodeapplication"
+          
 
-             sh "docker build -t nodeapplication ."
            }
 
         }
