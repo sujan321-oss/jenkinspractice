@@ -58,6 +58,19 @@ pipeline {
 
         }
 
+
+
+         stage("error condition") {
+                  step { 
+			script { 
+                                 echo "error stage .........."
+ 				}
+         		  }   
+                error("failure occured")
+             } 
+
+
+
     
 
         stage("testing") {
