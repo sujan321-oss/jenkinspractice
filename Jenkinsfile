@@ -65,9 +65,18 @@ pipeline {
 			script { 
                                  echo "error stage .........."
  				}
-		
 
          		  }   
+
+              post {
+                  failure{
+                                script {
+                                  echo "failure occured at error condition stage"
+                               }
+                        } 
+   
+                   }  
+                  
                 
              } 
 
