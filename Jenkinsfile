@@ -49,31 +49,31 @@ pipeline {
             checkout scm
             sh "docker build -t khuma1/nodeapplicationnn ."
            
-         withCredentials([usernamePassword(credentialsId: '984855', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-    sh "docker login -u $USERNAME -p $PASSWORD"
-    sh "docker push khuma1/nodeapplicationnn"
-}
-
-
-
-          
+                                                                                                                                             withCredentials([usernamePassword(credentialsId: '984855', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+       {
+            sh "docker login -u $USERNAME -p $PASSWORD"
+           sh "docker push khuma1/nodeapplicationnn"      }
 
            }
 
         }
 
-        
-
-
+    
 
         stage("testing") {
             agent any
-            steps{
-                sh "echo 'testing a code'"
-            }
+                when {
+                     expression {
+                           currentBuild.result == null || current.result=="SUCCESS" 
+   
+  			}
+                   }
+
+           sh 'echo "----------------------------------"'
+           sh 'echo "all the stages are executed successfully"'  
+           sh 'echo "expression staisfied"'          
+
         }
-
-
 
     }
 
