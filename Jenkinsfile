@@ -72,7 +72,7 @@ pipeline {
                                        echo " ---- ignoring a error--- " 
                                   } 
 
- 				}
+
 
          		  }   
 
