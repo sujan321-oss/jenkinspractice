@@ -65,7 +65,13 @@ pipeline {
 			script { 
                                  echo "error stage .........."
 
-                                 error("failure occured")
+                                 try { 
+					  error("simulating a error"
+                                         }
+                                  catch (Exception e) { 
+                                       echo " ---- ignoring a error--- " 
+                                  } 
+
  				}
 
          		  }   
