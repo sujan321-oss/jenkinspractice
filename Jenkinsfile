@@ -66,7 +66,7 @@ pipeline {
                                  echo "error stage .........."
 
                                  try { 
-					  error("simulating a error"
+					  error("simulating a error")
                                          }
                                   catch (Exception e) { 
                                        echo " ---- ignoring a error--- " 
@@ -75,7 +75,7 @@ pipeline {
 
 
          		  }   
-
+                      }
               post {
                   failure{
                                 script {
@@ -84,7 +84,6 @@ pipeline {
                         } 
    
                    }  
-}
                   
                 
              } 
