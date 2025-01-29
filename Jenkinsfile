@@ -64,6 +64,8 @@ pipeline {
                   steps{ 
 			script { 
                                  echo "error stage .........."
+
+                                 error("failure occured")
  				}
 
          		  }   
