@@ -68,7 +68,8 @@ pipeline {
                                  try { 
 					  error("simulating a error")
                                          }
-                                  catch (Exception e) { 
+                                  catch (Exception e) {
+                                        currentBuild.result = "unstable" 
                                        echo " ---- ignoring a error--- " 
                                   } 
 
