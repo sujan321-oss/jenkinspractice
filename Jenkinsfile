@@ -60,12 +60,12 @@ pipeline {
 
 
 
-         stage("error_)condition") {
+         stage("error_condition") {
                   steps{ 
 			script { 
                                  echo "error stage .........."
  				}
-			error ("failure occured")
+		
 
          		  }   
                 
