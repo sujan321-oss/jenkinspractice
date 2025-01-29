@@ -69,7 +69,7 @@ pipeline {
 					  error("simulating a error")
                                          }
                                   catch (Exception e) {
-                                        currentBuild.result = "unstable" 
+                                        currentBuild.result = "UNSTABLE" 
                                        echo " ---- ignoring a error--- " 
                                   } 
 
