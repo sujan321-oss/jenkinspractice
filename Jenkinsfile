@@ -65,8 +65,10 @@ pipeline {
 			script { 
                                  echo "error stage .........."
  				}
+			error ("failure occured")
+
          		  }   
-                error("failure occured")
+                
              } 
 
 
