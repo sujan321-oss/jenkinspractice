@@ -67,11 +67,14 @@ pipeline {
                            currentBuild.result == null || current.result=="SUCCESS" 
    
   			}
-                   }
-
-           sh 'echo "----------------------------------"'
-           sh 'echo "all the stages are executed successfully"'  
-           sh 'echo "expression staisfied"'          
+                   
+		}
+     
+             step {
+                 sh "  echo '____________________________________________________________________________' " 
+                sh " echo 'condition satisfied' "
+                sh " echo '------------------------------------------------------------------------------' "
+              }     
 
         }
 
