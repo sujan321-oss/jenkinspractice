@@ -60,7 +60,7 @@ pipeline {
 
 
 
-         stage("error condition") {
+         stage("error_)condition") {
                   steps{ 
 			script { 
                                  echo "error stage .........."
