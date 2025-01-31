@@ -120,7 +120,7 @@ pipeline {
 				script{
 					 def  retun_Data(name){
 					
-						return $name
+						return name
 				 }
 
 				 data = return_Data("khuma")
