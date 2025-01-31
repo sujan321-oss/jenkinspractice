@@ -111,6 +111,28 @@ pipeline {
 
         }
 
+
+	    stage ("function_declaration") { 
+			 agent any 
+
+			steps{ 
+
+				script{
+					 def  retun_Data(name){
+					
+						return $name
+				 }
+
+				 data = return_Data("khuma")
+
+				 echo data
+
+				}
+				
+			}
+			
+		}
+
     }
 
 }
