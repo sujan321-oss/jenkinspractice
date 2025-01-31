@@ -118,12 +118,12 @@ pipeline {
 			steps{ 
 
 				script{
-					 def  retun_Data(name){
+					 def  return_Data(name){
 					
 						return name
 				 }
 
-				 data = return_Data("khuma")
+				 def data = return_Data("khuma")
 
 				 echo data
 
