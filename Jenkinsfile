@@ -112,26 +112,25 @@ pipeline {
         }
 
 
-	    stage ("function_declaration") { 
-			 agent any 
+stage ("function_declaration") { 
+    agent any 
 
-			steps{ 
+    steps { 
+        script {
+            // Function to return the input name
+            def return_Data(String name) { 
+                return name 
+            }
 
-				script{
-					 def  return_Data(name){
-					
-						return name
-				 }
+            // Calling the function
+            def data = return_Data("khuma")
 
-				 def data = return_Data("khuma")
+            // Printing the value properly
+            echo "${data}"
+        }
+    }
+}
 
-				 echo data
-
-				}
-				
-			}
-			
-		}
 
     }
 
